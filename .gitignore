@@ -1,2 +1,5 @@
 node_modules
-.envgit add .
+.env
+.DS_Store
+npm-debug.log
+node_modules/
