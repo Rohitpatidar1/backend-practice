@@ -2,15 +2,12 @@
 // const app = express();
 const { default: mongoose } = require("mongoose");
 const app = require("./src/app");
+require("dotenv").config();
 
 function mongodbconnect() {
-  mongoose
-    .connect(
-      "mongodb+srv://Rohit:JU0tgRl0fRinQvjl@cluster0.ytsttsr.mongodb.net/newdatabase",
-    )
-    .then(() => {
-      console.log("database connectsuccessfully");
-    });
+  mongoose.connect(process.env.MONGO_URI).then(() => {
+    console.log("database connectsuccessfully");
+  });
 }
 mongodbconnect();
 
